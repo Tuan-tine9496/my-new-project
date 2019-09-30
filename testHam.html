@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input id="SoNguyen" type="text"/>
+    <input type="button" onclick="runProgram()" value="Check"/>
+</form>
+<script>
+
+    function checkSNT(number) {
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function runProgram() {
+        var number = document.getElementById("SoNguyen").value*1;
+        if(checkSNT(number)){
+            alert("ok");
+        }else {
+            alert("sai");
+        }
+    }
+
+</script>
+
+</body>
+</html>

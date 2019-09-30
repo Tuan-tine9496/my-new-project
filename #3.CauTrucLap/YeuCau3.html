@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkValidate = false;
+    let emailCustomer;
+    let birthdayCustomer;
+    let idCard;
+    let discount;
+
+    let nameCustomer = prompt("Điền Tên Đứa Khách Vào ");
+    let nameSatanrdized = "";
+
+    nameCustomer = nameCustomer.trim().toLocaleLowerCase();
+    for(let i = 0 ; i < nameCustomer.length;i++){
+        if(nameCustomer.charAt(i) === " "&& nameCustomer.charAt(i+1) === ""){
+            continue;
+        }
+        if(i===0){
+            nameSatanrdized +=nameCustomer.charAt().toLocaleUpperCase();
+            continue;
+        }
+        nameSatanrdized += nameCustomer.charAt(i);
+
+
+    }
+    nameCustomer = nameSatanrdized;
+    do{
+        checkValidate = false;
+        discount = prompt("Giảm Giá bao nhiêu %?");
+        if (!isNaN(discount)) {
+            checkValidate = true;
+
+        }if (!checkValidate){
+            alert("Discount Is Valid!!!Please Try Again");
+        }
+    }while (!checkValidate);
+    let numberOfAccompanying;
+    do {
+        checkValidate = false;
+        numberOfAccompanying = prompt("Enter Number Of Accompanying: ");
+        if (!isNaN(numberOfAccompanying)) {
+            numberOfAccompanying = Number.parseFloat(numberOfAccompanying);
+            if (numberOfAccompanying >= 0 && Number.isInteger(numberOfAccompanying)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate){
+            alert("Number Of Accompanying Is Invalid !!! Please Try Again");
+        }
+    } while (!checkValidate);
+
+
+
+    do{
+        checkValidate = false;
+        idCard = prompt("Điền Chứng Minh Thư Của Nó Vào Đây");
+        if(isNaN(idCard)){
+            alert("Id Card Is Invalid !! please Try Again!!!");
+            continue;
+
+        }
+        idCard = Number.parseFloat(idCard);
+        if(!Number.isInteger(idCard)){
+            alert("Id Card Is Invalid. Please Try Again !!!");
+            continue;
+           }
+        if(idCard>=100000000 && idCard <=999999999){
+            checkValidate = true;
+
+        }
+        else {
+            alert("Id Card Is Invalid !! please Try Again!!!");
+
+        }
+    }while (!checkValidate);
+
+    do{
+        checkValidate = false;
+        birthdayCustomer =  prompt(" Hỏi Ngày Sinh Của Nó (dd/MM/YYYY); ");
+        if(birthdayCustomer.charAt(2)!=='/' || birthdayCustomer.charAt(5) !=='/'){
+            alert("Birthday is invalid !!! Please try again !!!");
+            continue;
+        }
+        let day = birthdayCustomer.substring(0,2);
+        let moth = birthdayCustomer.substring(3,5);
+        let year = birthdayCustomer.substring(6,10);
+        if(!isNaN(day) && !isNaN(year)){
+            day = Number.parseFloat(day);
+            moth = Number.parseFloat(moth);
+            year = Number.parseFloat(year);
+            if(Number.isInteger(day)&&Number.isInteger(moth)&&Number.isInteger(year)){
+                if(day > 0 && day < 32 && moth < 13 && moth >0 && year >=1960 && year <= 2019){
+                    checkValidate = true;
+                }
+            }
+        }
+        if(!checkValidate){
+            alert("Birthday is invalid !!! Please try again !!!")
+        }
+    }while (!checkValidate);
+
+
+    do {
+        checkValidate = true;
+        emailCustomer = prompt("Hỏi Email Của Nó");
+        let countDoc = 0;
+        let countAt = 0;
+        for (let i = 0 ; i <emailCustomer.length; i++){
+            if(emailCustomer.charAt(i) === "@"){
+                countAt++;
+            }
+            if(emailCustomer.charAt(i) === "."){
+                countDoc++;
+            }
+        }
+        if(countDoc !==1 || countDoc < 1){
+            checkValidate = false;
+            alert("Email is Invalid !!! Please Try Again");
+        }
+    }while (!checkValidate);
+
+
+    // let addressCustomer = prompt("Nhà Của Nó Ở Đâu?")
+    // let typeCustomer = prompt("Nó là kiểu khách hàng gì?");
+    // let typeRoom = prompt("Kiểu phòng gì?");
+    let rentDays;
+    do {
+        checkValidate = false;
+        rentDays = prompt("Nó thuê mấy ngày");
+        if (!isNaN(rentDays)) {
+            rentDays = Number.parseFloat(rentDays);
+            if (rentDays > 0 && Number.isInteger(rentDays)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Rent Days Is Invalid !!! Please Try Again");
+        }
+    } while (!checkValidate);
+
+
+    // let typeserviece = prompt("Nó dùng kiểu dịch vụ gì?");
+    // let totalPays = 500 * Number.parseInt(rentDay) * (1 - Number.parseFloat(discount)/100);
+    alert(
+        "Information Of Customer: \n" +
+        "\nName Customer : " + nameCustomer +
+        "\nId Card : " +idCard +
+        "\nBirthday : " + birthdayCustomer +
+        "\nEmail : " + emailCustomer +
+        // "\nAddress : " + addressCustomer +
+        // "\nType Customer : " + typeCustomer +
+        "\nDiscount : " + discount +
+        "\nAccompanying : " + numberOfAccompanying +
+        // "\nTypeRoom : " +typeRoom +
+        "\nRent Days : " + rentDays
+        // "\nType Service : " +typeserviece +
+        // "\nTotal Pays : " +totalPays
+
+
+    )
+</script>
+</body>
+</html>
