@@ -16,7 +16,7 @@
                 arrNameCustomer.push(prompt("Enter name customer no " + (i + 1)));
 
             }
-            let result = "";
+            var result = "";
             for (var i = 0; i < arrNameCustomer.length; i++){
                 result += "\n"  + (i+1) + "." + arrNameCustomer[i];
             }
@@ -30,6 +30,29 @@
             alert(result);
             break;
         case "2":
+            arrNameCustomer[0] = "Tuan";
+            arrNameCustomer[1] = "Hung";
+            arrNameCustomer[2] = "Thuong";
+            arrNameCustomer[3] = "Phuong";
+            arrNameCustomer[4] = "Anh";
+            arrNameCustomer[5] = "Nam";
+            arrNameCustomer[6] = "Tu";
+            arrNameCustomer[7] = "Oanh";
+            arrNameCustomer[8] = "Thang";
+            arrNameCustomer[9] = "Hien";
+            var result = "";
+            for (var i = 0;i < arrNameCustomer.length; i++) {
+                result+= "\n" +(i + 1) + "." + arrNameCustomer[i];
+
+            }
+            let indexdelete = prompt("Chọn khách Hàng Bạn Muốn Xóa: " + result);
+            arrNameCustomer.splice(Number.parseInt(indexdelete) - 1, 1);
+            var resultAfterDelete = "";
+            for (var i = 0;i < arrNameCustomer.length; i++) {
+                resultAfterDelete += "\n" + (i + 1) + ". " + arrNameCustomer[i];
+
+            }
+            alert("Danh Sách Khách Hàng Sau Khi Xóa: " + resultAfterDelete);
             break;
         default:
             alert("Fail !!!");

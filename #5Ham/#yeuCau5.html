@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+    function displayMainmeny() {
+        let choose = prompt(
+            "1. Add new customer" +
+            "\n2.Display Information Customer" +
+            "\n3.Edit Information Customer" +
+            "\n4.Delete Customer" +
+            "\5.Exit"
+        );
+        switch (choose) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomers();
+                break;
+            case "3":
+                break;
+            case "4":
+                break;
+            case "5":
+                break;
+            default:
+                alert("Faill!!");
+                break;
+            
+        }
+        function addNewCustomer() {
+            let arrInfo = [];
+            let nameCustomer = prompt("Điền Tên Đứa Khách Vào ");
+            let idCard = prompt("Điền Chứng Minh Thư Của Nó Vào Đây");
+            let birthdayCustomer = prompt(" Hỏi Ngày Sinh Của Nó");
+            let emailCustomer = prompt("Hỏi Email Của Nó");
+            let addressCustomer = prompt("Nhà Của Nó Ở Đâu?")
+            let typeCustomer = prompt("Nó là kiểu khách hàng gì?");
+            let discount = prompt("Giảm Giá bao nhiêu %?");
+            let numberofaccompanying = prompt("Số Lượng đi kèm?");
+            let typeRoom = prompt("Kiểu phòng gì?");
+            let rentDay = prompt("Nó thuê mấy ngày: ");
+            let typeserviece = prompt("Nó dùng kiểu dịch vụ gì?");
+            arrInfo.push(nameCustomer);
+            arrInfo.push(idCard);
+            arrInfo.push(birthdayCustomer);
+            arrInfo.push(emailCustomer);
+            arrInfo.push(addressCustomer);
+            arrInfo.push(typeCustomer);
+            arrInfo.push(discount);
+            arrInfo.push(numberofaccompanying);
+            arrInfo.push(typeRoom);
+            arrInfo.push(rentDay);
+            arrInfo.push(typeserviece);
+            arrListCustomer.push(arrInfo);
+            displayMainmeny();
+
+
+            
+        }
+        function displayCustomers() {
+            let result = "";
+            for(var i = 0 ; i< arrListCustomer.length;i++){
+                result += "\n" + (i + 1) + "." + "Name: " + arrListCustomer[i][0] +
+                        "; Id Card: " + arrListCustomer.length[i][1];
+            }
+            result += "\n" + (arrListCustomer.length +1) + ".Back to menu.";
+            let chooseDisplayInfo = prompt(result);
+            displayInformationCustomer(number.parseInt(chooseDisplayInfo)-1);
+
+
+        }
+        function displayInformationCustomer(index) {
+            alert("Information of customer:\n"+
+                  "Name :" + arrListCustomers[index][0] +
+                  "\nId card :" + arrListCustomers[index][1] +
+                  "\nBirthday :" + arrListCustomers[index][2]+
+                  "\nEmail :" + arrListCustomers[index][3]+
+                  "\nAddress :" + arrListCustomers[index][4]+
+                  "\nType Customer :" + arrListCustomers[index][5]+
+                  "\nDiscount :" + arrListCustomers[index][6]+
+                  "\nAccompanying :" + arrListCustomers[index][7]+
+                  "\nType Room :" + arrListCustomers[index][8]+
+                  "\nRent Day :" + arrListCustomers[index][9]+
+                  "\nType Sevrice :" + arrListCustomers[index][10]
+            );
+            displayCustomers();
+
+        }
+        
+    }
+    displayMainmeny();
+    
+</script>
+
+</body>
+</html>
