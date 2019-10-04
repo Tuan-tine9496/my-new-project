@@ -106,7 +106,7 @@
                     "\n12.Back."
                 );
                 if (chooseInfoEdit.toString() !== "12") {
-                    editInformationCustomer(Number.parseInt(chooseInfoEdit) - 1);
+                    editInformationCustomer(index,Number.parseInt(chooseInfoEdit) - 1);
                 } else {
                     displayCustomers();
                 }
@@ -134,41 +134,41 @@
             displayCustomers();
         }
 
-        function editInformationCustomer(index) {
+        function editInformationCustomer(indexCus,indexPropety) {
             let editInfo = prompt("Enter Info You Want Change: ");
-            switch (index) {
+            switch (indexPropety) {
                 case 0:
-                    arrListCustomer[index][0] = editInfo;
+                    arrListCustomer[indexPropety][0] = editInfo;
                     break;
                 case 1:
-                    arrListCustomer[index][1] = editInfo;
+                    arrListCustomer[indexPropety][1] = editInfo;
                     break;
                 case 2:
-                    arrListCustomer[index][2] = editInfo;
+                    arrListCustomer[indexPropety][2] = editInfo;
                     break;
                 case 3:
-                    arrListCustomer[index][3] = editInfo;
+                    arrListCustomer[indexPropety][3] = editInfo;
                     break;
                 case 4:
-                    arrListCustomer[index][4] = editInfo;
+                    arrListCustomer[indexPropety][4] = editInfo;
                     break;
                 case 5:
-                    arrListCustomer[index][5] = editInfo;
+                    arrListCustomer[indexPropety][5] = editInfo;
                     break;
                 case 6:
-                    arrListCustomer[index][6] = editInfo;
+                    arrListCustomer[indexPropety][6] = editInfo;
                     break;
                 case 7:
-                    arrListCustomer[index][7] = editInfo;
+                    arrListCustomer[indexPropety][7] = editInfo;
                     break;
                 case 8:
-                    arrListCustomer[index][8] = editInfo;
+                    arrListCustomer[indexPropety][8] = editInfo;
                     break;
                 case 9:
-                    arrListCustomer[index][9] = editInfo;
+                    arrListCustomer[indexPropety][9] = editInfo;
                     break;
                 case 10:
-                    arrListCustomer[index][10] = editInfo;
+                    arrListCustomer[indexPropety][10] = editInfo;
                     break;
                 default:
                     alert("Fail!!");

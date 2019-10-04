@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+    let checkEditCustomer = false;
+    let checkDeleteCustomer = false;
+    function displayMainmenu() {
+        let choose = prompt(
+            "1. Add new customer" +
+            "\n2.Display Information Customer" +
+            "\n3. Display Total Pay Of Customer" +
+            "\n4.Edit Information Customer" +
+            "\n5.Delete Customer" +
+            "\n6.Exit"
+        );
+        switch (choose) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomers();
+                break;
+            case "3":
+                displayTotalCustomer;
+                break;
+            case "4":
+                chooseDeleteCustomer();
+                break;
+            case "5":
+                break;
+            default:
+                alert("Faill!!");
+                break;
+
+        }
+
+        function addNewCustomer() {
+            let arrInfo = [];
+            let nameCustomer = prompt("Enter Customer's Name ");
+            let idCard = prompt("Enter Customer's Idcard");
+            let birthdayCustomer = prompt(" Enter Customer's Birthday");
+            let emailCustomer = prompt("Enter Customer's Email");
+            let addressCustomer = prompt("Enter Customer's Address?")
+            let typeCustomer = prompt("Enter Type Customer?");
+            let discount = prompt("Sale Off");
+            let numberofaccompanying = prompt("Number Of Accompanyingm?");
+            let typeRoom = prompt("Number Of Accompanying");
+            let rentDay = prompt("Rent Day ");
+            let typeserviece = prompt("Type Serviece");
+            arrInfo.push(nameCustomer);
+            arrInfo.push(idCard);
+            arrInfo.push(birthdayCustomer);
+            arrInfo.push(emailCustomer);
+            arrInfo.push(addressCustomer);
+            arrInfo.push(typeCustomer);
+            arrInfo.push(discount);
+            arrInfo.push(numberofaccompanying);
+            arrInfo.push(typeRoom);
+            arrInfo.push(rentDay);
+            arrInfo.push(typeserviece);
+            arrListCustomer.push(arrInfo);
+            displayMainmenu();
+
+        }
+        // function displayTotalCustomer() {
+        //     let totalPays = 0;
+        //     this.rentDays = rentDays.value;
+        //     this.discount = discount.value;
+        //     this.numberOfAccompanying = numberOfAccompanying.value;
+        //     let totalPays = 500 * Number.parseInt(rentDay) * (1 - Number.parseFloat(discount)/100);
+
+            
+
+
+
+    }
+    displayMainmenu();
+    </script>
+
+</body>
+</html>
