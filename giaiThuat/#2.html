@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script language="javascript">
+
+    function ten_thu(Ngay){
+        var day = nam.value + "/" + thang.value + "/" + ngay.value;
+        var d = new Date(day);
+        var k = d.getDay();
+        switch (k) {
+            case 0:
+                return "Chủ Nhật";
+                break;
+            case 1:
+                return "Thứ 2";
+                break;
+            case 2:
+                return "Thứ 3";
+                break;
+            case 3:
+                return "Thứ 4";
+                break;
+            case 4:
+                return "Thứ 5";
+                break;
+            case 5:
+                return "Thứ 6";
+                break;
+            case 6:
+                return "Thứ 7";
+                break;
+        }
+    }
+
+    function la_so(gt){
+        if (isNaN(gt))
+            return false;
+        else
+            return true;
+    }
+
+    function xuat_ngay_sinh(dd,mm,yyyy){
+        if(la_so(dd) == true && la_so(mm) == true && la_so(yyyy) == true && dd != '' && mm != '' && yyyy != ''){
+            var dNgay = new Date(yyyy,mm,dd);
+            var d = ten_thu(dd) + ", " + dd + "/" + mm + "/" + yyyy;
+            return d;
+        }
+        else {
+            var emp = ' ';
+            return emp;
+
+
+        }
+    }
+</script>
+</head>
+
+<body>
+<h1 align="center" style="color:#660033">Nhập ngày tháng</h1>
+<form>
+    <table align = "center" border = "1" cellspacing="0" style="border-collapse:collapse; color: #660033" bordercolor="#CC6600" cellpadding="3">
+        <tr>
+            <td>Ngày: <input type = "text" id = "ngay" size = "10"> Tháng: <input type = "text" id = "thang" size = "10"> Năm: <input type = "text" id = "nam" size = "10">  </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#993d00"><label id = "xuat" style="color:white"></label></td>
+        </tr>
+        <tr>
+            <td align="center"><button type = "button" onclick="xuat.innerHTML=xuat_ngay_sinh(ngay.value,thang.value,nam.value)">xuất ngày tháng</button></td>
+        </tr>
+
+    </table>
+</form>
+</html>

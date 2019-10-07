@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function trim(chuoi) {
+            var i = 0;
+            var n = chuoi.length;
+            while (i<n) {
+                if(chuoi.charAt(i) == ' ')
+                    ++i;
+                else break;
+            }
+            var chuoitam1 = chuoi.substr(i,n);
+            var j = chuoitam1.length - 1;
+            while (j>0) {
+                if (chuoitam1.charAt(j) == ' ')
+                    --j;
+                else break;
+            }
+            var chuoitam2 = chuoitam1.substr(0, j+1);
+            return chuoitam2;
+        }
+
+        function phan_tich(chuoi){
+            var c = trim(chuoi);
+            var d1 = c.indexOf(' ');
+            var d2 = c.lastIndexOf(' ');
+            var ho = c.substr(0, d1);
+            var lot = c.substr(d1, d2-3);
+            var n = c.length;
+            var ten = c.substr(d2, n);
+            if (d1 == d2) {
+                document.getElementById("Ho").innerHTML = ho;
+                document.getElementById("Ten").innerHTML = ten;
+            }
+            else {
+                document.getElementById("Ho").innerHTML = ho;
+                document.getElementById("Lot").innerHTML = lot;
+                document.getElementById("Ten").innerHTML = ten;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 align="center" style="color:#CC6600">Phân tích chuỗi</h1>
+<form>
+    <table align = "center" border = "1" cellspacing="0" style="border-collapse:collapse; color: #CC6600; background-color: #ffff99" bordercolor="#CC6600" cellpadding="3">
+
+        <tr>
+            <td>Nhập họ tên: </td>
+            <td><input type = "text" id = "hoten" size = "30"> &nbsp; <input type = "button" id = "phantich" value = "Phân tích" onclick="phan_tich(hoten.value)"></td>
+        </tr>
+
+        <tr>
+            <td>Họ:</td>
+            <td align="center"><label id = "Ho" style="color:blue; font-weight: bold;"></label></td>
+        </tr>
+
+        <tr>
+            <td>Tên lót:</td>
+            <td align="center"><label id = "Lot" style="color:blue; font-weight: bold;"></label></td>
+        </tr>
+
+        <tr>
+            <td>Tên:</td>
+            <td align="center"><label id = "Ten" style="color:blue; font-weight: bold;"></label></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
